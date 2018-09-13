@@ -6,6 +6,9 @@ class FormatMaker
 {
     public static function WDCformat($data, $datatype)
     {
+        if ($data == false) {
+            return false;
+        }
         if ($datatype == 'hourly') {
             foreach ($data as $row) {
                 $observkod = $row[0];
@@ -88,6 +91,9 @@ class FormatMaker
 
     public static function CSVformat($data, $datatype)
     {
+        if ($data == false) {
+            return false;
+        }
         if ($datatype == 'hourly') {
             foreach ($data as $row) {
                 $observkod = $row[0];
@@ -170,6 +176,9 @@ class FormatMaker
 
     public static function IAGA2002format($data, $datatype)
     {
+        if ($data == false) {
+            return false;
+        }
         //если выбераем часовые данные
         if ($datatype == 'hourly') {
 

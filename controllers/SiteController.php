@@ -34,7 +34,11 @@ class SiteController {
         }
 
         $data = Data::getData($mindate, $maxdate, $kod, $savedata, $email, $datatype, $connect);
-        Data::output($data, $savedata, $kod, $datatype, $connect);
+        if ($data) {
+            Data::output($data, $savedata, $kod, $datatype, $connect);
+        } else {
+            echo 'Не найдены данные за выбранный период';
+        }
 
     }
 

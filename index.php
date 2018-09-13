@@ -1,16 +1,15 @@
 <?php
 session_start();
-//error_reporting(E_ALL);
-//mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+error_reporting(E_ALL);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 define('ROOT', dirname(__FILE__));
 require_once('components/connect.php');
 require_once(ROOT.'/controllers/SiteController.php');
 $controller = new SiteController;
 $observatoriesList = $controller->actionIndex($connect);
-$test = array();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -105,10 +104,10 @@ $test = array();
                             <div class = "formblock">
                                 <h3>Вид данных</h3>
                                     <label class="ntSaveForms">
-                                        <input type="radio" name="datatype" class="ntSaveForms" value="hourly" <?php if ($_POST['datatype'] == 'hourly') echo 'checked';?>/>Среднечасовые
+                                        <input type="radio" name="datatype" class="ntSaveForms" value="hourly" <?php if (isset($_POST['submit'])) { if ($_POST['datatype'] == 'hourly') echo 'checked'; }?>/>Среднечасовые
                                     </label>
                                     <label class="ntSaveForms">
-                                        <input type="radio" name="datatype" class="ntSaveForms" value="minute" <?php if ($_POST['datatype'] == 'minute') echo 'checked';?>/>Минутные
+                                        <input type="radio" name="datatype" class="ntSaveForms" value="minute" <?php if (isset($_POST['submit'])) { if ($_POST['datatype'] == 'minute') echo 'checked'; }?>/>Минутные
                                     </label>
                             </div>
                         <div class = "formblock">
@@ -117,7 +116,7 @@ $test = array();
                                 <select  id="obsnametab" name="obsnametab" onchange="onSelectChange()">
 					<option value = "-">-</option>
                                     <?php foreach ($observatoriesList as $observatory) : ?>
-                                    <option value = "<?php echo $observatory[1]; ?>"><?php echo $observatory[1]; ?>, <?php echo $observatory[2]; ?></option>
+                                    <option value = "<?php echo $observatory[1]; ?>" <?php if (isset($_POST['submit'])) {if ($_POST['obsnametab'] == $observatory[1]) echo 'selected';} ?>><?php echo $observatory[1]; ?>, <?php echo $observatory[2]; ?></option>
                                     <?php endforeach;?>
                                 </select>
                         </div>
@@ -126,35 +125,35 @@ $test = array();
                             <h3>Временной интервал</h3>
                             <lable>от
                                 <input type="text" name="date1" id="date1"  class="ntSaveForms" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"  size="10" value="<?php echo $_POST['date1']; ?>">             
-                            </lablel>
+                            </lable>
                             <lable>до
                                 <input type="text" name="date2" id="date2" class="ntSaveForms" placeholder="yyyy-mm-dd" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"  size="10" value="<?php echo $_POST['date2']; ?>">
-                            </label>
+                            </lable>
                         </div>
                         
                         <div class = "output">
                             <h3>Формат вывода данных</h3>
                                 <label style="margin-right:-5px;">
-                                    <input type="radio" name="savedata" class="ntSaveForms" value="WDC"  <?php if ($_POST['savedata'] == 'WDC') echo 'checked';?>/>WDC
+                                    <input type="radio" name="savedata" class="ntSaveForms" value="WDC"  <?php if (isset($_POST['submit'])) { if ($_POST['savedata'] == 'WDC') echo 'checked'; }?>/>WDC
                                     <a href="http://www.wdcb.ru/stp/geomag/format_hourly.ru.html" target="_blank"><img class="question" src="template/question.png" alt="О формате" title="О формате"></a>
                                 </label>
                                 <div class="formatCheckbox">
                                     <label>
-                                        <input type="radio" name="savedata" class="ntSaveForms" value="CSV" <?php if ($_POST['savedata'] == 'CSV') echo 'checked';?>/>CSV
+                                        <input type="radio" name="savedata" class="ntSaveForms" value="CSV" <?php if (isset($_POST['submit'])) { if ($_POST['savedata'] == 'CSV') echo 'checked'; }?>/>CSV
                                     </label>
                                 </div>
                                 <div class="formatCheckbox">
                                     <label>
-                                        <input type="radio" name="savedata" class="ntSaveForms" value="IAGA2002" <?php if ($_POST['savedata'] == 'IAGA2002') echo 'checked';?>/>IAGA2002
+                                        <input type="radio" name="savedata" class="ntSaveForms" value="IAGA2002" <?php if (isset($_POST['submit'])) { if ($_POST['savedata'] == 'IAGA2002') echo 'checked'; }?>/>IAGA2002
                                         <a href="https://www.ngdc.noaa.gov/IAGA/vdat/IAGA2002/iaga2002format.html#fh" target="_blank"><img class="question" src="template/question.png" alt="О формате" title="О формате"></a>
                                     </label>
                                 </div>
 				<div class="formblock" style="padding-top:30px; border:none;">
-                                    <label for="email">Email </label><input type="text" name="email" id="email" value="<?php echo $_POST['email']; ?>" required>
+                                    <label for="email">Email </label><input type="text" name="email" id="email" value="<?php if (isset($_POST['submit'])) { echo $_POST['email'];} ?>" required>
                                     <a href="#"><img class="question" src="template/question.png" alt="Email используется только для внутренней статистики" title="Email используется только для внутренней статистики"></a>
                                 </div>
                                 
-                                    <input class="button" type="submit" value="Найти" name="submit1" id="" /></br>
+                                    <input class="button" type="submit" value="Найти" name="submit" id="" /></br>
                                     <div class="help"><a href="javascript:sh()">Помощь</a></div>
                         </div>
                 </div>
@@ -162,7 +161,7 @@ $test = array();
                                 <div id="info" style="padding-top:15px;">
                                 <p>помощь помощь помощь помощь помощь помощь помощь помощь помощь помощь помощь помощь помощь</p>
                                 </div>
-                                <?php if (isset($_POST['submit1'])) : ?>
+                                <?php if (isset($_POST['submit'])) : ?>
                                 <div class="textarea clearfix">
                                     <textarea readonly><?php                                       
                                         $controller->run($connect);
@@ -173,7 +172,7 @@ $test = array();
                     </form>           
             </div>
     </div>
-    <!-- <footer>
+    <footer>
         <div class = "footer-menu">
             <ul>
                 <li>
@@ -197,14 +196,12 @@ $test = array();
             <img src="template/line.gif"></img>
         </div>
         <p>© 1995-2018 МЦД по СЗФ, ГЦ РАН</p>
-    </footer> -->
-    <script type='text/javascript' src='ntsaveforms.js'></script>
-    </div>
-    <script src="leaflet/leaflet.js"></script>
-    <script src="components/dronestrikes.js"></script>
+    </footer>
+    <script type='text/javascript' src="leaflet/leaflet.js"></script>
+    <script type='text/javascript' src="components/dronestrikes.js"></script>
     <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="jquery/jquery.maskedinput.js"></script>
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript' src="jquery/jquery.maskedinput.js"></script>
     <script type="text/javascript">
             jQuery(function($){
             $("#date1").mask("9999-99-99",{placeholder:"yyyy-mm-dd"});

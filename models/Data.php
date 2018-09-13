@@ -66,12 +66,16 @@ class Data {
 
 
         $data = array();
-        $insert = mysqli_query($connect, ("INSERT INTO user_contacts (`email`) VALUES ('$email')"));
+        mysqli_query($connect, ("INSERT INTO user_contacts (`email`) VALUES ('$email')"));
         if ($savedata == 'IAGA2002') {
             $query = mysqli_query($connect, ("SELECT Kod, Element, Date, Basic, HourSet1,HourSet2,HourSet3,HourSet4,HourSet5,HourSet6,HourSet7,HourSet8,HourSet9,HourSet10,HourSet11,HourSet12,HourSet13,HourSet14,HourSet15,HourSet16,HourSet17,HourSet18,HourSet19,HourSet20,HourSet21,HourSet22,HourSet23,HourSet24
                                 FROM hourdata WHERE Kod LIKE '$kod' AND (Date >= '$mindate' AND Date <= '$maxdate') ORDER BY Date ASC, Element ASC"));
         } else {
             $query = mysqli_query($connect, ("SELECT * FROM hourdata WHERE Kod LIKE '$kod' AND (Date>='$mindate' AND Date<='$maxdate')"));
+        }
+
+        if ($query->num_rows == 0) {
+            return false;
         }
 
         while ($result = mysqli_fetch_array($query, MYSQLI_NUM)) {

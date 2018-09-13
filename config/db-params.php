@@ -2,7 +2,7 @@
 
 return array(
     'host' => 'localhost',
-    'user' => 't',
-    'password' => '',
-    'db_name' => '',
+    'user' => 'remote',
+    'password' => '222222',
+    'db_name' => 'gcras',
 );
