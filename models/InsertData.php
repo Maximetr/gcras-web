@@ -137,7 +137,7 @@ class InsertData {
             $sostDays = ' ';
             $I = ' ';
             $century = substr($row, 14, 2);
-            if ($century == '') {
+            if ($century == '  ') {
                 if ($year >= 20 && $year <= 99) {
                     $century = '19';
                 }
