@@ -23,12 +23,13 @@ class InsertData {
 
     public static function CheckHourly($rows) {
 
-        $regular = "~([A-Z]{3})([0-9]{2})((\\s[0-9]|1[0-2])|(0[0-9]|1[0-2]))([D|H|Z|F|X|Y])((\\s|[0-3])[0-9])(\\s{2})(.{2})((\\s{2}|18|19|20))([\\s*-?0-9]{4})([\\s|9|-|0-9][\\s*-?0-9]{3}){25}~";
+        $regular = "~([A-Z]{3})([0-9]{2})((\\s[0-9]|1[0-2])|(0[0-9]|1[0-2]))([D|H|Z|F|X|Y])((\\s|[0-3])[0-9])(\\s{2})(.{2})((\\s{2}|18|19|20))([\\s*-?0-9]{4})([\\s|9|-|0-9][\\s*-?0-9]{1,3}){25}~";
         $lineNumber = 1;
 
         foreach ($rows as $row) {
 
             $checkResult = preg_match($regular, $row);
+
             if ($checkResult == false) {
                 $error = "Строка номер $lineNumber не соответвует формату данных";
                 
