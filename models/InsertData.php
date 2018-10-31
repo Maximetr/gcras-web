@@ -107,19 +107,16 @@ class InsertData {
     }
 
     //Метод формирования даты вида YYYY-MM-DD
-    public static function makeDate($year, $month, $day) {
+    public static function makeDate($year, $month, $day, $century) {
         if ($month < 10) {
             $month = '0'.$month;
         }
         if ($day < 10) {
             $day = '0'.$day;
         }
-    
-        if ($year < 25) {
-            $date = '20'.$year.'-'.$month.'-'.$day;
-        } else {
-            $date = '19'.$year.'-'.$month.'-'.$day;
-        }   
+
+        $date = $century.$year.'-'.$month.'-'.$day;
+
         return $date;
     }
 
@@ -147,7 +144,7 @@ class InsertData {
                 }
             }
             $basic = ltrim(substr($row, 16, 4), '0');
-            $date = self::makeDate($year, $month, $day);
+            $date = self::makeDate($year, $month, $day, $century);
             
             if ($basic == '') {
                 $basic = '0';

@@ -15,14 +15,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="InsertData.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/models/InsertData.php">
+      <file leaf-file-name="Data.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/Data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="164" lean-forward="false" selection-start-line="25" selection-start-column="164" selection-end-line="25" selection-end-column="164" />
+            <state relative-caret-position="27">
+              <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
               <folding>
-                <marker date="1539704836974" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
-                <marker date="1539704836974" expanded="true" signature="8176:9231" ph="INSERT INTO `hourdata`... " />
+                <marker date="1541003704183" expanded="true" signature="2315:2368" ph="INSERT INTO user_contacts... " />
+                <marker date="1541003704183" expanded="true" signature="2458:2869" ph="SELECT Kod, hourdata" />
+                <marker date="1541003704183" expanded="true" signature="2937:3025" ph="SELECT * FRO... hourdata" />
+                <marker date="1541003704183" expanded="true" signature="3384:3437" ph="INSERT INTO user_contacts... " />
+                <marker date="1541003704183" expanded="true" signature="3572:3694" ph="SELECT * FRO... minutedata" />
+                <marker date="1541003704183" expanded="true" signature="3921:4053" ph="SELECT * FRO... minutedata" />
+                <marker date="1541003704183" expanded="true" signature="6603:6652" ph="SELECT * FRO... Observatories" />
+                <marker date="1541003704183" expanded="true" signature="6998:7052" ph="SELECT * FRO... Observatories" />
               </folding>
             </state>
           </provider>
@@ -44,6 +50,7 @@
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/components/FormatMaker.php" />
         <option value="$PROJECT_DIR$/models/InsertData.php" />
+        <option value="$PROJECT_DIR$/changeyear.php" />
       </list>
     </option>
   </component>
@@ -78,7 +85,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -135,6 +141,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -239,13 +246,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20492000" />
+    <option name="totallyTimeSpent" value="27409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21405405" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22162162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -261,8 +267,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14918919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -270,8 +276,8 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,15 +293,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/Validator.php" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/.gitignore" />
     <entry file="file://$PROJECT_DIR$/components/dronestrikes.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -309,8 +306,8 @@
         <state relative-caret-position="216">
           <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
           <folding>
-            <marker date="1539704836974" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
-            <marker date="1539704836974" expanded="true" signature="8176:9231" ph="INSERT INTO `hourdata`... " />
+            <marker date="1541004895761" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
+            <marker date="1541004895761" expanded="true" signature="8085:9140" ph="INSERT INTO `hourdata`... " />
           </folding>
         </state>
       </provider>
@@ -462,14 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -485,21 +474,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/adminpanel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1701">
+          <caret line="68" column="34" lean-forward="false" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+          <folding>
+            <marker date="1541003704031" expanded="true" signature="3429:4016" ph="..." />
+            <marker date="1541003704031" expanded="true" signature="3429:4039" ph="..." />
+            <marker date="1541003704031" expanded="true" signature="3429:5986" ph="..." />
+            <marker date="1541003704031" expanded="true" signature="3429:6001" ph="..." />
+            <marker date="1541003704031" expanded="true" signature="3429:6012" ph="..." />
+            <marker date="1541003704031" expanded="true" signature="3430:3989" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="135">
+          <caret line="5" column="39" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="5" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/InsertData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="164" lean-forward="false" selection-start-line="25" selection-start-column="164" selection-end-line="25" selection-end-column="164" />
+        <state relative-caret-position="621">
+          <caret line="120" column="5" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="120" selection-end-column="5" />
           <folding>
-            <marker date="1539704836974" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
-            <marker date="1539704836974" expanded="true" signature="8176:9231" ph="INSERT INTO `hourdata`... " />
+            <marker date="1541004895761" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
+            <marker date="1541004895761" expanded="true" signature="8085:9140" ph="INSERT INTO `hourdata`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/changeyear.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="23" column="97" lean-forward="false" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding>
+            <marker date="1541003704183" expanded="true" signature="2315:2368" ph="INSERT INTO user_contacts... " />
+            <marker date="1541003704183" expanded="true" signature="2458:2869" ph="SELECT Kod, hourdata" />
+            <marker date="1541003704183" expanded="true" signature="2937:3025" ph="SELECT * FRO... hourdata" />
+            <marker date="1541003704183" expanded="true" signature="3384:3437" ph="INSERT INTO user_contacts... " />
+            <marker date="1541003704183" expanded="true" signature="3572:3694" ph="SELECT * FRO... minutedata" />
+            <marker date="1541003704183" expanded="true" signature="3921:4053" ph="SELECT * FRO... minutedata" />
+            <marker date="1541003704183" expanded="true" signature="6603:6652" ph="SELECT * FRO... Observatories" />
+            <marker date="1541003704183" expanded="true" signature="6998:7052" ph="SELECT * FRO... Observatories" />
           </folding>
         </state>
       </provider>
