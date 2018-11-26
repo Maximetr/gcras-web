@@ -23,20 +23,34 @@ class InsertData {
 
     public static function CheckHourly($rows) {
 
-        $regular = "~([A-Z]{3})([0-9]{2})((\\s[0-9]|1[0-2])|(0[0-9]|1[0-2]))([D|H|Z|F|X|Y])((\\s|[0-3])[0-9])(\\s{2})(.{2})((\\s{2}|18|19|20))([\\s*-?0-9]{4})([\\s*-?0-9]{4}){25}~";
+        $regular = "~([A-Z]{3})([0-9]{2})((\\s[0-9]|1[0-2])|(0[0-9]|1[0-2]))([D|H|Z|F|X|Y])((\\s|[0-3])[0-9])(\\s{2})(.{2})((\\s{2}|18|19|20))~";
+        $positionRegular = "~(\\s|-|[0-9]){3}[0-9]~";
         $lineNumber = 1;
 
         foreach ($rows as $row) {
-
-            $checkResult = preg_match($regular, $row);
-
-            if ($checkResult == false) {
-                $error = "Строка номер $lineNumber не соответвует формату данных";
-                
+            if (strlen($row) > 121) {
+                $error = "Ошибка формата в строке ".$lineNumber.". Неверная длина строки.";
                 return $error;
                 break;
             }
-            
+            $checkHeader = preg_match($regular,$row);
+            if ($checkHeader) {
+                for ($i = 16; $i <= 119;) {
+                    $position = substr($row,$i,4);
+                    $checkPosition = preg_match($positionRegular,$position);
+                    if (!$checkPosition) {
+                        $error = "Ошибка формата в строке ".$lineNumber." в позиции ".$i;
+                        return $error;
+                        break;
+                    }
+                    $i = $i+4;
+                }
+            } else {
+                $error = "Ошибка формата в строке ".$lineNumber." в заголовке строки";
+
+                return $error;
+                break;
+            }
             $lineNumber++;
         }
 

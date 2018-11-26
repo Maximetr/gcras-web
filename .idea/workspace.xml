@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0e460c84-9d73-4693-a521-b5abccc5583c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/InsertData.php" afterPath="$PROJECT_DIR$/models/InsertData.php" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,6 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
+<<<<<<< Updated upstream
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="Data.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Data.php">
@@ -35,6 +39,9 @@
         </entry>
       </file>
     </leaf>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+>>>>>>> Stashed changes
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,6 +92,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -141,8 +150,11 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< Updated upstream
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,17 +253,39 @@
       <option name="presentableId" value="Default" />
       <updated>1536844313541</updated>
       <workItem from="1536844318519" duration="5759000" />
+<<<<<<< Updated upstream
       <workItem from="1536925128375" duration="7128000" />
+=======
+      <workItem from="1536925128375" duration="8559000" />
+      <workItem from="1537094722542" duration="20000" />
+      <workItem from="1537360573696" duration="13126000" />
+      <workItem from="1537984122297" duration="9000" />
+      <workItem from="1538159077471" duration="3633000" />
+      <workItem from="1538583204777" duration="6087000" />
+      <workItem from="1540210668376" duration="6591000" />
+      <workItem from="1540560579121" duration="5299000" />
+      <workItem from="1541003562029" duration="63000" />
+      <workItem from="1542786049917" duration="4529000" />
+      <workItem from="1542800327098" duration="50000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="27409000" />
+=======
+    <option name="totallyTimeSpent" value="69132000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
     <layout>
+<<<<<<< Updated upstream
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22162162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22918919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -401,9 +435,14 @@
     <entry file="file://$PROJECT_DIR$/config/params.php" />
     <entry file="file://$PROJECT_DIR$/components/connect.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="135">
           <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
+=======
+        <state relative-caret-position="458">
+          <caret line="149" column="23" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -419,9 +458,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Data.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="4860">
           <caret line="180" column="5" lean-forward="true" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="5" />
           <folding />
+=======
+        <state relative-caret-position="593">
+          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -499,12 +543,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/InsertData.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="621">
           <caret line="120" column="5" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="120" selection-end-column="5" />
           <folding>
             <marker date="1541004895761" expanded="true" signature="3051:5567" ph="INSERT INTO `minutedata`... " />
             <marker date="1541004895761" expanded="true" signature="8085:9140" ph="INSERT INTO `hourdata`... " />
           </folding>
+=======
+        <state relative-caret-position="1431">
+          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -518,8 +568,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Data.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="27">
           <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+=======
+        <state relative-caret-position="594">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+>>>>>>> Stashed changes
           <folding>
             <marker date="1541003704183" expanded="true" signature="2315:2368" ph="INSERT INTO user_contacts... " />
             <marker date="1541003704183" expanded="true" signature="2458:2869" ph="SELECT Kod, hourdata" />
