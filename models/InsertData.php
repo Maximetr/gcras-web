@@ -80,7 +80,7 @@ class InsertData {
                     $century = '20';
                 }
             }
-            $date = self::makeDate($year, $month, $day);
+            $date = self::makeDate($year, $month, $day, $century);
             $minutevalues = array();
             $hourvalues = array();
             for ($i = 34, $j = strlen($row); $i < $j;) {
@@ -122,6 +122,15 @@ class InsertData {
 
     //Метод формирования даты вида YYYY-MM-DD
     public static function makeDate($year, $month, $day, $century) {
+        if ($century == '0') {
+            $century = '20';
+        }
+        if ($century == '9') {
+            $century = '19';
+        }
+        if ($century == '8') {
+            $century = '18';
+        }
         if ($month < 10) {
             $month = '0'.$month;
         }
