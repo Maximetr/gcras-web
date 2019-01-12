@@ -4,13 +4,13 @@ require_once(ROOT.'/components/AssistantFunctions.php');
 
 class FormatMaker
 {
-    public static function WDCformat($data, $datatype)
+    public static function WDCformat($data, $type)
     {
         if ($data == false) {
             return false;
         }
         $resultData = array();
-        if ($datatype == 'hourly') {
+        if ($type == 'hourly') {
             foreach ($data as $row) {
                 $observkod = $row[0];
                 $year = $row[1];
@@ -42,7 +42,7 @@ class FormatMaker
             return $resultData;
         }
 
-        if ($datatype == 'minute') {
+        if ($type == 'minute') {
             foreach ($data as $row) {
                 $latitude = str_pad($row[0], 6, ' ', STR_PAD_LEFT);
                 $longtitude = str_pad($row[1], 6, ' ', STR_PAD_LEFT);
@@ -65,6 +65,7 @@ class FormatMaker
                 $observkod = $row[8];
                 $tableDataType = $row[9];
 		        $century = $row[71];
+		        $analogRecordings = $row[72];
 
                 $minuteSets = array();
                 for ($i = 10; $i<=70; $i++){
@@ -75,20 +76,20 @@ class FormatMaker
                     }
                 }
 
-		        $resultRow = "$latitude$longtitude$year$month$day$element$hour$observkod $century$tableDataType       $minuteSets[0]$minuteSets[1]$minuteSets[2]$minuteSets[3]$minuteSets[4]$minuteSets[5]$minuteSets[6]$minuteSets[7]$minuteSets[8]$minuteSets[9]$minuteSets[10]$minuteSets[11]$minuteSets[12]$minuteSets[13]$minuteSets[14]$minuteSets[15]$minuteSets[16]$minuteSets[17]$minuteSets[18]$minuteSets[19]$minuteSets[20]$minuteSets[21]$minuteSets[22]$minuteSets[23]$minuteSets[24]$minuteSets[25]$minuteSets[26]$minuteSets[27]$minuteSets[28]$minuteSets[29]$minuteSets[30]$minuteSets[31]$minuteSets[32]$minuteSets[33]$minuteSets[34]$minuteSets[35]$minuteSets[36]$minuteSets[37]$minuteSets[38]$minuteSets[39]$minuteSets[40]$minuteSets[41]$minuteSets[42]$minuteSets[43]$minuteSets[44]$minuteSets[45]$minuteSets[46]$minuteSets[47]$minuteSets[48]$minuteSets[49]$minuteSets[50]$minuteSets[51]$minuteSets[52]$minuteSets[53]$minuteSets[54]$minuteSets[55]$minuteSets[56]$minuteSets[57]$minuteSets[58]$minuteSets[59]$minuteSets[60]\n";
+		        $resultRow = "$latitude$longtitude$year$month$day$element$hour$observkod$analogRecordings$century$tableDataType       $minuteSets[0]$minuteSets[1]$minuteSets[2]$minuteSets[3]$minuteSets[4]$minuteSets[5]$minuteSets[6]$minuteSets[7]$minuteSets[8]$minuteSets[9]$minuteSets[10]$minuteSets[11]$minuteSets[12]$minuteSets[13]$minuteSets[14]$minuteSets[15]$minuteSets[16]$minuteSets[17]$minuteSets[18]$minuteSets[19]$minuteSets[20]$minuteSets[21]$minuteSets[22]$minuteSets[23]$minuteSets[24]$minuteSets[25]$minuteSets[26]$minuteSets[27]$minuteSets[28]$minuteSets[29]$minuteSets[30]$minuteSets[31]$minuteSets[32]$minuteSets[33]$minuteSets[34]$minuteSets[35]$minuteSets[36]$minuteSets[37]$minuteSets[38]$minuteSets[39]$minuteSets[40]$minuteSets[41]$minuteSets[42]$minuteSets[43]$minuteSets[44]$minuteSets[45]$minuteSets[46]$minuteSets[47]$minuteSets[48]$minuteSets[49]$minuteSets[50]$minuteSets[51]$minuteSets[52]$minuteSets[53]$minuteSets[54]$minuteSets[55]$minuteSets[56]$minuteSets[57]$minuteSets[58]$minuteSets[59]$minuteSets[60]\n";
                 $resultData[] = $resultRow;
             }
             return $resultData;
         }
     }
 
-    public static function CSVformat($data, $datatype)
+    public static function CSVformat($data, $type)
     {
         if ($data == false) {
             return false;
         }
         $resultData = array();
-        if ($datatype == 'hourly') {
+        if ($type == 'hourly') {
             foreach ($data as $row) {
                 $observkod = $row[0];
                 $year = $row[1];
@@ -121,7 +122,7 @@ class FormatMaker
             return $resultData;
         }
 
-        if ($datatype == 'minute') {
+        if ($type == 'minute') {
             foreach ($data as $row) {
                 $latitude = str_pad($row[0], 6, ' ', STR_PAD_LEFT);
                 $longtitude = str_pad($row[1], 6, ' ', STR_PAD_LEFT);
@@ -143,7 +144,8 @@ class FormatMaker
                 $hour = $row[7];
                 $observkod = $row[8];
                 $tableDataType = $row[9];
-		$century = $row[71];
+		        $century = $row[71];
+                $analogRecordings = $row[72];
 
                 $minuteSets = array();
                 for ($i = 10; $i<=70; $i++){
@@ -154,21 +156,21 @@ class FormatMaker
                     }
                 }
 
-		$resultRow = "$latitude,$longtitude,$year,$month,$day,$element,$hour,$observkod, ,$century,$tableDataType,       $minuteSets[0],$minuteSets[1],$minuteSets[2],$minuteSets[3],$minuteSets[4],$minuteSets[5],$minuteSets[6],$minuteSets[7],$minuteSets[8],$minuteSets[9],$minuteSets[10],$minuteSets[11],$minuteSets[12],$minuteSets[13],$minuteSets[14],$minuteSets[15],$minuteSets[16],$minuteSets[17],$minuteSets[18],$minuteSets[19],$minuteSets[20],$minuteSets[21],$minuteSets[22],$minuteSets[23],$minuteSets[24],$minuteSets[25],$minuteSets[26],$minuteSets[27],$minuteSets[28],$minuteSets[29],$minuteSets[30],$minuteSets[31],$minuteSets[32],$minuteSets[33],$minuteSets[34],$minuteSets[35],$minuteSets[36],$minuteSets[37],$minuteSets[38],$minuteSets[39],$minuteSets[40],$minuteSets[41],$minuteSets[42],$minuteSets[43],$minuteSets[44],$minuteSets[45],$minuteSets[46],$minuteSets[47],$minuteSets[48],$minuteSets[49],$minuteSets[50],$minuteSets[51],$minuteSets[52],$minuteSets[53],$minuteSets[54],$minuteSets[55],$minuteSets[56],$minuteSets[57],$minuteSets[58],$minuteSets[59],$minuteSets[60]\n";                $resultData[] = $resultRow;
+		$resultRow = "$latitude,$longtitude,$year,$month,$day,$element,$hour,$observkod,$analogRecordings,$century,$tableDataType,       $minuteSets[0],$minuteSets[1],$minuteSets[2],$minuteSets[3],$minuteSets[4],$minuteSets[5],$minuteSets[6],$minuteSets[7],$minuteSets[8],$minuteSets[9],$minuteSets[10],$minuteSets[11],$minuteSets[12],$minuteSets[13],$minuteSets[14],$minuteSets[15],$minuteSets[16],$minuteSets[17],$minuteSets[18],$minuteSets[19],$minuteSets[20],$minuteSets[21],$minuteSets[22],$minuteSets[23],$minuteSets[24],$minuteSets[25],$minuteSets[26],$minuteSets[27],$minuteSets[28],$minuteSets[29],$minuteSets[30],$minuteSets[31],$minuteSets[32],$minuteSets[33],$minuteSets[34],$minuteSets[35],$minuteSets[36],$minuteSets[37],$minuteSets[38],$minuteSets[39],$minuteSets[40],$minuteSets[41],$minuteSets[42],$minuteSets[43],$minuteSets[44],$minuteSets[45],$minuteSets[46],$minuteSets[47],$minuteSets[48],$minuteSets[49],$minuteSets[50],$minuteSets[51],$minuteSets[52],$minuteSets[53],$minuteSets[54],$minuteSets[55],$minuteSets[56],$minuteSets[57],$minuteSets[58],$minuteSets[59],$minuteSets[60]\n";                $resultData[] = $resultRow;
             }
             return $resultData;
         }
     }
 
-    public static function IAGA2002format($data, $datatype)
+    public static function IAGA2002format($data, $type)
     {
         if ($data == false) {
             return false;
         }
         //если выбераем часовые данные
-        if ($datatype == 'hourly') {
+        if ($type == 'hourly') {
 
-            $elementSet = AssistantFunctions::elementCheck($data[0], $data[1], $data[2], $data[3], $datatype);
+            $elementSet = AssistantFunctions::elementCheck($data[0], $data[1], $data[2], $data[3], $type);
             $_SESSION['elementSet'] = $elementSet;
             $recalculateData = AssistantFunctions::recalculateElement($data, $elementSet);
 
@@ -229,8 +231,8 @@ class FormatMaker
         }
 
         //если выбираем минутные значения
-        if ($datatype == 'minute') {
-            $elementSet = AssistantFunctions::elementCheck($data[0], $data[1], $data[2], $data[3], $datatype);
+        if ($type == 'minute') {
+            $elementSet = AssistantFunctions::elementCheck($data[0], $data[1], $data[2], $data[3], $type);
             $_SESSION['elementSet'] = $elementSet;
             end($data);
             $end = key($data);
@@ -287,8 +289,6 @@ class FormatMaker
                 }  
             }
         return $string;
-            
-            
         }
     }
 }

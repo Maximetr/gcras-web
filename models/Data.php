@@ -26,37 +26,37 @@ class Data {
     }
 
     /*Получение необходимых данных из БД */
-    public static function getData($mindate, $maxdate, $kod, $savedata, $email, $datatype, $connect) 
+    public static function getData($mindate, $maxdate, $kod, $savedata, $email, $type, $connect)
     {
         //если выбираем часовые данные
-        if ($datatype == 'hourly') {
+        if ($type == 'hourly') {
             $data = self::getHourlyData($mindate, $maxdate, $kod, $connect, $savedata, $email);
             if ($savedata == 'WDC') {
-                $data = FormatMaker::WDCformat($data, $datatype);
+                $data = FormatMaker::WDCformat($data, $type);
                 return $data;
             }
             if ($savedata == 'CSV') {
-                $data = FormatMaker::CSVformat($data, $datatype);
+                $data = FormatMaker::CSVformat($data, $type);
                 return $data;
             }
             if ($savedata == 'IAGA2002') {
-                $data = FormatMaker::IAGA2002format($data, $datatype);
+                $data = FormatMaker::IAGA2002format($data, $type);
                 return $data;
             }
         }
         //если выбираем минутные данные
-        if ($datatype == 'minute') {
+        if ($type == 'minute') {
             $data = self::getMinuteData($mindate, $maxdate, $kod, $savedata, $email, $connect);
             if ($savedata == 'WDC') {
-                $data = FormatMaker::WDCformat($data, $datatype);
+                $data = FormatMaker::WDCformat($data, $type);
                 return $data;
             }
             if ($savedata == 'CSV') {
-                $data = FormatMaker::CSVformat($data, $datatype);
+                $data = FormatMaker::CSVformat($data, $type);
                 return $data;
             }
             if ($savedata == 'IAGA2002') {
-                $data = FormatMaker::IAGA2002format($data, $datatype);
+                $data = FormatMaker::IAGA2002format($data, $type);
                 return $data;
             }
         }
@@ -91,7 +91,7 @@ class Data {
         $data = array();
 
         if ($savedata == 'WDC' or $savedata == 'CSV') { 
-            $query = mysqli_query($connect, ("SELECT * FROM minutedata WHERE Kod = '$kod' AND (Date >= '$mindate' AND Date <= '$maxdate') ORDER BY Element ASC, Date ASC"));       
+            $query = mysqli_query($connect, ("SELECT * FROM minutedata WHERE Kod = '$kod' AND (Date >= '$mindate' AND Date <= '$maxdate') ORDER BY Day ASC"));
             while ($result = mysqli_fetch_array($query, MYSQLI_NUM)) {
                 $data[] = $result;
             }
@@ -106,7 +106,7 @@ class Data {
         return $data;
     }
 
-    public static function output($data, $savedata, $kod, $datatype, $connect) 
+    public static function output($data, $savedata, $kod, $type, $connect, $dataType = '')
     {
         
 
@@ -131,12 +131,16 @@ class Data {
                 $elementsRow = "DATE       TIME         DOY     $kod"."D      $kod"."H      $kod"."Z      $kod"."F   |\n";
                 $elementSet = 'DHZF';
             }
-            if ($datatype == 'minute') {
+            if ($type == 'minute') {
                 $interval = 'PT1M';
             }
-            if ($datatype == 'hourly') {
+            if ($type == 'hourly') {
                 $interval = 'HOUR';
             }
+            if ($dataType[0] == 'D') {
+                $dataType[0] = 'DEFINITIVE';
+            }
+            $dataType = str_pad($dataType[0], 44, ' ', STR_PAD_RIGHT);
             $head = " Format                  IAGA-2002                                   |
  Source of Data                                                      |
  Station Name            $stationName|
@@ -148,7 +152,7 @@ class Data {
  Sensor Orientation                                                  |
  Digital Sampling                                                    |
  Data Interval Type      $interval                                        |
- Data Type                                                           |
+ Data Type               $dataType|
 $elementsRow";
             echo $head;
             echo $data;
@@ -178,5 +182,13 @@ $elementsRow";
         $observatoryData = $result;
 
         return $observatoryData;
+    }
+    public static function getDataType($connect, $mindate,$maxdate,$kod)
+    {
+        $sql = "SELECT DataType FROM minutedata WHERE Kod = '$kod' AND (Date >= '$mindate' AND Date <= '$maxdate') LIMIT 1";
+        $query = mysqli_query($connect, $sql);
+
+        $result = mysqli_fetch_row($query);
+        return $result;
     }
 }

@@ -8,7 +8,7 @@ require_once(ROOT.'/components/connect.php');
 class SiteController {
 
     /*Запуск обработчика
-    $datatype - тип запрашиваемых данных;
+    $type - тип запрашиваемых данных;
     $mindate - нижний край временного интервала;
     $maxdate - верхний край временного интервала;
     $kod - 3-х значний МАГА-код обсерватории;
@@ -17,7 +17,7 @@ class SiteController {
     */
     public function run($connect) {
 
-        $datatype = $_POST['datatype'];
+        $type = $_POST['datatype'];
         $mindate = $_POST['date1'];
         $maxdate = $_POST['date2'];
         $kod = $_POST['obsnametab'];
@@ -33,9 +33,12 @@ class SiteController {
             return false;
         }
 
-        $data = Data::getData($mindate, $maxdate, $kod, $savedata, $email, $datatype, $connect);
+        $data = Data::getData($mindate, $maxdate, $kod, $savedata, $email, $type, $connect);
+        if ($type == 'minute') {
+            $dataType = Data::getDataType($connect, $mindate,$maxdate,$kod,$type);
+        }
         if ($data) {
-            Data::output($data, $savedata, $kod, $datatype, $connect);
+            Data::output($data, $savedata, $kod, $type, $connect, $dataType);
         } else {
             echo 'Не найдены данные за выбранный период';
         }
@@ -45,25 +48,24 @@ class SiteController {
 
     public function StartInsert($connect) {
 
-        $dataType = $_POST['dataType'];
+        $type = $_POST['dataType'];
         $inputData = $_POST['inputData'];
 
-        if ($dataType == 'minute') {
+        if ($type == 'minute') {
             
             $rows = explode("\n", $inputData);
 
             $checkResult = InsertData::CheckMinute($rows);
-
             if ($checkResult === true) {
                 echo "Данные корректны, начинаю добавление в базу данных\n";  
-                $result = InsertData::InsertMinute($rows, $connect);        
+                $result = InsertData::InsertMinute($rows, $connect);
             } else {
                 echo "Данные введены некорректно\n";
                 echo "$checkResult\n";   
             }
         }
 
-        if ($dataType == 'hourly') {
+        if ($type == 'hourly') {
 
             $rows = explode("\n", $inputData);
 
